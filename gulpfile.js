@@ -76,6 +76,31 @@ gulp.task('mailer', function() {//mailer переміщаємо в робочу 
     .pipe(gulp.dest("dist/mailer"))
 });
 
+gulp.task("basket_project", function () {
+	return gulp
+		.src("node_modules/basket/**/*")
+		.pipe(gulp.dest("dist/basket"))
+});
+
+gulp.task("mntn_project", function () {
+	return gulp
+		.src("node_modules/mntn/**/*")
+		.pipe(gulp.dest("dist/mntn"))
+});
+
+gulp.task("quiz_project", function () {
+	return gulp
+		.src("node_modules/quiz/**/*")
+		.pipe(gulp.dest("dist/quiz"))
+});
+
+gulp.task("wordpress_project", function () {
+	return gulp
+		.src("node_modules/wordpresst/**/*")
+		.pipe(gulp.dest("dist/wordpress"))
+});
+
+
 gulp.task(
 	"default",
 	gulp.parallel(
@@ -87,6 +112,10 @@ gulp.task(
 		"icons",
 		"html",
 		"images",
-    "mailer"
+    "mailer",
+    "basket_project",
+    "mntn_project",
+    "quiz_project",
+    "wordpress_project"
 	)
 );
