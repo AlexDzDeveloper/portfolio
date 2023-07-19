@@ -1,0 +1,87 @@
+.resume {
+  padding-top: 120px;
+  .divider {
+    @include divider;
+  }
+  &__wrapper {
+    padding:60px 90px 0 90px;
+    display: grid;
+    grid-template-columns: repeat(2, 425px);
+    column-gap: 140px;
+  }
+  &__column {
+    &-title {
+      position: relative;
+      padding-left: 35px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: $main-color;
+        border-radius: 50%;
+        left: -7px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    li {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: calc(100% + 16px);
+        top: -16px;
+        left: 0;
+        background-color: #000;
+        // z-index: -2;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 42px;
+      background-color: #000;
+      top: 47px;
+
+    }
+    &-head {
+      position: relative;
+      padding: 25px 0 0 100px;
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+    &-icon {
+      position: absolute;
+      top: 29px;
+      left: 42px;
+      @include before_circle;
+      img {
+        position: absolute;
+        margin: 14px 0 0 17px;
+      }
+    }
+    &-location {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      margin-top: 5px;
+    }
+    &-body{
+      padding-left: 43px;
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+  }
+}

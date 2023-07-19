@@ -1,0 +1,8 @@
+.btn {
+  background-color: $main-color;
+  height: 45px;
+  padding: 12px 25px;
+  &:hover {
+    color: #fff;
+  }
+}

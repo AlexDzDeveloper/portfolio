@@ -1,0 +1,43 @@
+.promo {
+  min-height: 100vh; /* на всю висоту монітора користувача */
+  position: relative;
+  // background: url('../img/main_bg.jpg') no-repeat 50% / cover ;
+  object-fit: cover;
+  background-color: #e6fff9;
+  padding-top: 205px;
+  // z-index: -3;
+  &__subtitle {
+    position: relative;
+    padding-left: 10px;
+    color:#000;
+    z-index: 2;
+    @include before_circle;
+  }
+  &__title {
+    width: 475px;
+    margin-top: 10px;
+  }
+  &__buttons {
+    margin-top: 25px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    width: 135px;
+    height: 45px;
+    &:hover {
+      color: $main-color;
+      text-decoration: none;
+    }
+  }
+}
