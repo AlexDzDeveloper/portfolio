@@ -21,5 +21,11 @@
     "gulp-sass": "^5.1.0",
     "sass": "^1.63.6",
     "tiny-slider": "^2.9.4"
+  },
+  "dependencies": {
+    "basket": "https://github.com/AlexDzDeveloper/bascet-shop",
+    "mntn": "https://github.com/AlexDzDeveloper/MNTNproject",
+    "quiz": "https://github.com/AlexDzDeveloper/quiz",
+    "wordpress": "https://github.com/AlexDzDeveloper/wordpress_project"
   }
 }
