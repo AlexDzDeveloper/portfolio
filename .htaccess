@@ -1,0 +1,8 @@
+# Дозволити серверу обробляти SVG-файли
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# Увімкнути кешування для зображень (опціонально)
+<FilesMatch "\.(svg|svgz)$">
+  Header set Content-Disposition inline
+</FilesMatch>
