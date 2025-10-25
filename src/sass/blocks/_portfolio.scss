@@ -8,7 +8,7 @@
 	&__wrapper {
 		margin-top: 60px;
 		display: grid;
-		grid-template: repeat(2, 280px) / repeat(4, 280px);
+		grid-template: repeat(2, minmax(auto, 280px)) / repeat(4, minmax(auto, 280px));
 		grid-auto-rows: 280px;
 		gap: 5px;
 	}
@@ -21,7 +21,6 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				// position: relative;
 				position: absolute;
 				&:hover {
 					transform: scale(1.05);
@@ -47,11 +46,6 @@
 			}
 
 		&-btns {
-			// display: flex;
-			// flex-direction: row;
-			// justify-content: space-between;
-			// align-items: center;
-			// gap: 5px;
 			display: grid;
 			grid-template: repeat(2, 138px);
 			gap: 5px;
@@ -79,7 +73,6 @@
 				text-align: center;
 				align-items: center;
 				z-index: 10;
-				// position: absolute;
 				position: relative;
 				top: 235px;
 				text-transform: uppercase;
