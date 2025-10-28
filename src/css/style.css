@@ -881,7 +881,7 @@ template {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: grayscale(90%);
+  filter: grayscale(95%);
 }
 .portfolio__item img:hover {
   transform: scale(1.05);
