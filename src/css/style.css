@@ -929,6 +929,70 @@ template {
   transform: scale(1.1);
   transition: all 0.3s ease-in;
 }
+.portfolio__item-text {
+  background-color: grey;
+  padding: 20px 30px;
+  width: 700px;
+  height: 300px;
+  border: 4px solid #ffa501;
+  border-radius: 25px;
+  z-index: 15;
+  position: relative;
+  left: 96%;
+  top: -70%;
+  color: #fff;
+  display: grid;
+  grid-template: repeat(2, minmax(60px, 1fr))/2 240px, 190px, 240px;
+  gap: 15px;
+}
+.portfolio__item-text .stack {
+  grid-column: 1/2;
+}
+.portfolio__item-text .stack span {
+  font-size: 17px;
+  font-weight: 600;
+}
+.portfolio__item-text .stack .items .item {
+  margin-left: 20px;
+  font-weight: 400;
+}
+.portfolio__item-text .diagram {
+  grid-column: 2/3;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  background: conic-gradient(red 0% 36%, blue 36% 84%, yellow 84% 100%);
+  border-radius: 50%;
+  right: 0;
+  position: relative;
+}
+.portfolio__item-text .diagram::before {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 20;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%), translateX(-50%);
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  border-radius: 50%;
+}
+.portfolio__item-text .libraries {
+  grid-column: 3/4;
+}
+.portfolio__item-text .libraries span {
+  font-size: 17px;
+  font-weight: 600;
+}
+.portfolio__item-text .libraries .items .item {
+  margin-left: 20px;
+  font-weight: 400;
+}
 .portfolio__item.vertical {
   grid-row: 1/3;
   grid-column: 4/5;
