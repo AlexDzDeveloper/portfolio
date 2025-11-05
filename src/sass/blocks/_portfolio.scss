@@ -1,3 +1,5 @@
+@use "./keyframes";
+
 .portfolio {
   	padding-top: 120px;
 
@@ -8,7 +10,7 @@
 	&__wrapper {
 		margin-top: 60px;
 		display: grid;
-		grid-template: repeat(2, minmax(auto, 280px)) / repeat(4, minmax(auto, 280px));//не правильно
+		grid-template: repeat(2, minmax(0, 280px)) / repeat(4, minmax(0, 280px));//не правильно
 		grid-auto-rows: 280px;
 		column-gap: 5px;
 		row-gap: 50px;
@@ -100,7 +102,7 @@
 
 		&-text {
 			background-color: grey;
-			padding: 20px 30px;
+			padding: 30px;
 			width: 700px;
 			height: 300px;
 			border: 4px solid #ffa501;
@@ -111,7 +113,8 @@
 			top: -70%;
 			color: #fff;
 			display: grid;
-			grid-template: repeat(2, minmax(60px, 1fr)) / 2 (240px, 190px, 240px);
+			// display: none;
+			grid-template: repeat(2, minmax(60px, 1fr)) / 226px 150px 226px;
 			gap: 15px;
 
 			.stack {
@@ -124,35 +127,79 @@
 
 				.items {
 					.item {
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
 						margin-left: 20px;
 						// font-size: 14px;
+						font-weight: 500;
+						list-style-type: none;
+						position: relative;
+						// left: -32px;
+					}
+
+					span {
+						font-size: 14px;
 						font-weight: 400;
-						// list-style-type: none;
+						margin-left: 45px;
+						&::before {
+							content: "";
+							display: inline-block;
+							width: 16px;
+							height: 16px;
+							background-color: red;
+							position: relative;
+							top: 2px;
+							right: 10px;
+						}
+					}
+					.html {
+						&::before {
+							content: "\2022";
+							position: relative;
+							// right: -150px;
+							font-size: 18px;
+							right: 10px;
+							vertical-align: middle;
+							text-align: center;
+							// display: inline-block;
+						}
+
+					}
+					.css {
+
+					}
+					.js {
+
 					}
 				}
 			}
 
 			.diagram {
 				grid-column: 2/3;
-				width: 130px;
-				height: 130px;
+				width: 110px;
+				height: 110px;
 				// display: flex;
-				text-align: center;
-				vertical-align: middle;
-				align-items: center;
+				// text-align: center;
+				// vertical-align: middle;
+				// align-items: center;
 				background: conic-gradient(red 0% 36%, blue 36% 84%, yellow 84% 100%);
 				border-radius: 50%;
-				right: 0;
+				// right: 0;
 				// margin-left: 25px;
 				position: relative;
+				animation: rotation 5s infinite linear;
+				justify-self: end;
+				align-self: flex-end;
 
 				&::before {
 					content: '';
 					display: block;
 					position: relative;
 					z-index: 20;
-					width: 100px;
-					height: 100px;
+					width: 80px;
+					height: 80px;
 					top: 50%;
 					left: 50%;
 					transform: translateY(-50%), translateX(-50%);
@@ -180,7 +227,15 @@
 				}
 			}
 
-
+			.close {
+				position: relative;
+				grid-column: 2/3;
+				width: 200px;
+				height: 50px;
+				bottom: -60px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 
 		&.vertical {

@@ -851,6 +851,14 @@ template {
   background-color: #FFA501;
 }
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .portfolio {
   padding-top: 120px;
 }
@@ -863,7 +871,7 @@ template {
 .portfolio__wrapper {
   margin-top: 60px;
   display: grid;
-  grid-template: repeat(2, minmax(auto, 280px))/repeat(4, minmax(auto, 280px));
+  grid-template: repeat(2, minmax(0, 280px))/repeat(4, minmax(0, 280px));
   grid-auto-rows: 280px;
   -moz-column-gap: 5px;
        column-gap: 5px;
@@ -931,7 +939,7 @@ template {
 }
 .portfolio__item-text {
   background-color: grey;
-  padding: 20px 30px;
+  padding: 30px;
   width: 700px;
   height: 300px;
   border: 4px solid #ffa501;
@@ -942,7 +950,7 @@ template {
   top: -70%;
   color: #fff;
   display: grid;
-  grid-template: repeat(2, minmax(60px, 1fr))/2 240px, 190px, 240px;
+  grid-template: repeat(2, minmax(60px, 1fr))/226px 150px 226px;
   gap: 15px;
 }
 .portfolio__item-text .stack {
@@ -953,28 +961,56 @@ template {
   font-weight: 600;
 }
 .portfolio__item-text .stack .items .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   margin-left: 20px;
+  font-weight: 500;
+  list-style-type: none;
+  position: relative;
+}
+.portfolio__item-text .stack .items span {
+  font-size: 14px;
   font-weight: 400;
+  margin-left: 45px;
+}
+.portfolio__item-text .stack .items span::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  position: relative;
+  top: 2px;
+  right: 10px;
+}
+.portfolio__item-text .stack .items .html::before {
+  content: "•";
+  position: relative;
+  font-size: 18px;
+  right: 10px;
+  vertical-align: middle;
+  text-align: center;
 }
 .portfolio__item-text .diagram {
   grid-column: 2/3;
-  width: 130px;
-  height: 130px;
-  text-align: center;
-  vertical-align: middle;
-  align-items: center;
+  width: 110px;
+  height: 110px;
   background: conic-gradient(red 0% 36%, blue 36% 84%, yellow 84% 100%);
   border-radius: 50%;
-  right: 0;
   position: relative;
+  animation: rotation 5s infinite linear;
+  justify-self: end;
+  align-self: flex-end;
 }
 .portfolio__item-text .diagram::before {
   content: "";
   display: block;
   position: relative;
   z-index: 20;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   top: 50%;
   left: 50%;
   transform: translateY(-50%), translateX(-50%);
@@ -992,6 +1028,15 @@ template {
 .portfolio__item-text .libraries .items .item {
   margin-left: 20px;
   font-weight: 400;
+}
+.portfolio__item-text .close {
+  position: relative;
+  grid-column: 2/3;
+  width: 200px;
+  height: 50px;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .portfolio__item.vertical {
   grid-row: 1/3;
