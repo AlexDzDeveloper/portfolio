@@ -970,28 +970,44 @@ template {
   list-style-type: none;
   position: relative;
 }
-.portfolio__item-text .stack .items span {
-  font-size: 14px;
-  font-weight: 400;
-  margin-left: 45px;
-}
-.portfolio__item-text .stack .items span::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-color: red;
-  position: relative;
-  top: 2px;
-  right: 10px;
-}
-.portfolio__item-text .stack .items .html::before {
+.portfolio__item-text .stack .items .item::before {
   content: "•";
   position: relative;
   font-size: 18px;
   right: 10px;
   vertical-align: middle;
   text-align: center;
+}
+.portfolio__item-text .stack .items .item span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.portfolio__item-text .stack .items .item span::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 2px;
+  right: 10px;
+}
+.portfolio__item-text .stack .items .item span.html {
+  margin-left: 50px;
+}
+.portfolio__item-text .stack .items .item span.html::before {
+  background-color: red;
+}
+.portfolio__item-text .stack .items .item span.css {
+  margin-left: 13px;
+}
+.portfolio__item-text .stack .items .item span.css:before {
+  background-color: blue;
+}
+.portfolio__item-text .stack .items .item span.js {
+  margin-left: 39px;
+}
+.portfolio__item-text .stack .items .item span.js::before {
+  background-color: yellow;
 }
 .portfolio__item-text .diagram {
   grid-column: 2/3;
@@ -1001,7 +1017,7 @@ template {
   border-radius: 50%;
   position: relative;
   animation: rotation 5s infinite linear;
-  justify-self: end;
+  justify-self: center;
   align-self: flex-end;
 }
 .portfolio__item-text .diagram::before {
@@ -1009,8 +1025,8 @@ template {
   display: block;
   position: relative;
   z-index: 20;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   top: 50%;
   left: 50%;
   transform: translateY(-50%), translateX(-50%);

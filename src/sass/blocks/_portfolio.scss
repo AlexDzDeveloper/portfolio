@@ -137,24 +137,7 @@
 						list-style-type: none;
 						position: relative;
 						// left: -32px;
-					}
 
-					span {
-						font-size: 14px;
-						font-weight: 400;
-						margin-left: 45px;
-						&::before {
-							content: "";
-							display: inline-block;
-							width: 16px;
-							height: 16px;
-							background-color: red;
-							position: relative;
-							top: 2px;
-							right: 10px;
-						}
-					}
-					.html {
 						&::before {
 							content: "\2022";
 							position: relative;
@@ -166,13 +149,41 @@
 							// display: inline-block;
 						}
 
-					}
-					.css {
+						span {
+							font-size: 14px;
+							font-weight: 400;
+							&::before {
+								content: "";
+								display: inline-block;
+								width: 16px;
+								height: 16px;
 
-					}
-					.js {
+								position: relative;
+								top: 2px;
+								right: 10px;
+							}
 
+							&.html {
+								margin-left: 50px;
+								&::before {
+									background-color: red;
+								}
+							}
+							&.css {
+								margin-left: 13px;
+								&:before {
+									background-color: blue;
+								}
+							}
+							&.js {
+								margin-left: 39px;
+								&::before {
+									background-color: yellow;
+								}
+							}
+						}
 					}
+
 				}
 			}
 
@@ -180,17 +191,11 @@
 				grid-column: 2/3;
 				width: 110px;
 				height: 110px;
-				// display: flex;
-				// text-align: center;
-				// vertical-align: middle;
-				// align-items: center;
 				background: conic-gradient(red 0% 36%, blue 36% 84%, yellow 84% 100%);
 				border-radius: 50%;
-				// right: 0;
-				// margin-left: 25px;
 				position: relative;
 				animation: rotation 5s infinite linear;
-				justify-self: end;
+				justify-self: center;
 				align-self: flex-end;
 
 				&::before {
@@ -198,8 +203,8 @@
 					display: block;
 					position: relative;
 					z-index: 20;
-					width: 80px;
-					height: 80px;
+					width: 70px;
+					height: 70px;
 					top: 50%;
 					left: 50%;
 					transform: translateY(-50%), translateX(-50%);
