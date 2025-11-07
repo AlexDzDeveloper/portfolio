@@ -90,28 +90,35 @@ form.addEventListener('submit', function(e) {
 });
 
 //Робота із описом робіт
-const portfolio = document.querySelector('.portfolio',)
-	  used = document.querySelector(".portfolio__item-text"),
-	  description = document.querySelector('.portfolio__item-btns .descr'),
-	  closeDescr = used.querySelector('.close'),
+const portfolio = document.querySelector('.portfolio'),
 	  portfolioOverlay = portfolio.querySelector('.overlay');
 
-description.addEventListener('click', () => {
-	used.style.visibility = "visible";
-	portfolioOverlay.style.zIndex = '90';
-	used.style.opacity = '1';
-	used.style.animation = 'none';
-	void used.offsetWidth;
-	used.style.animation = 'zooming 1s ease-out';
-	// document.style.position = 'fixed';
-});
+portfolio.addEventListener('click', (e) => {
+	const target = e.target;
 
-closeDescr.addEventListener('click', () => {
-	used.style.visibility = "hidden";
-	portfolioOverlay.style.zIndex = '-2';
-	used.style.opacity = '0';
-	used.style.animation = 'none';
-	void used.offsetWidth;
-	used.style.animation = 'zooming 0.7s ease 0s 1 alternate';
-	// document.body.classList.remove('no-scroll');
-})
+	const descrBtn = target.classList.contains('descr');//true
+
+	if(descrBtn) {
+		const item = target.closest('.container');
+		const used = item.querySelector('.portfolio__item-text');
+
+		used.style.visibility = "visible";
+		used.style.opacity = '1';
+		used.style.animation = 'none';
+		void used.offsetWidth;
+		used.style.animation = 'zooming 1s ease-out';
+
+		portfolioOverlay.style.zIndex = '90';
+
+		const close = used.querySelector('.close');
+		close.addEventListener('click', () => {
+			used.style.visibility = "hidden";
+			used.style.opacity = '0';
+			used.style.animation = 'none';
+			void used.offsetWidth;
+			used.style.animation = 'zooming 0.7s ease 0s 1 alternate';
+
+			portfolioOverlay.style.zIndex = '-2';
+		})
+	}
+});
