@@ -859,6 +859,17 @@ template {
     transform: rotate(360deg);
   }
 }
+@keyframes zooming {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .portfolio {
   padding-top: 120px;
 }
@@ -876,6 +887,15 @@ template {
   -moz-column-gap: 5px;
        column-gap: 5px;
   row-gap: 50px;
+}
+.portfolio__wrapper .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: -2;
 }
 .portfolio__wrapper .container {
   width: 280px;
@@ -945,15 +965,16 @@ template {
   height: 280px;
   border: 4px solid #ffa501;
   border-radius: 25px;
-  z-index: 15;
+  z-index: 100;
   position: relative;
   left: 96%;
   top: -70%;
   color: #fff;
   display: grid;
-  grid-template: repeat(2, minmax(60px, 240px))/226px 150px 226px;
+  opacity: 0;
   grid-template: 110px 40px/226px 150px 226px;
   gap: 15px;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 .portfolio__item-text .stack {
   grid-column: 1/2;
@@ -1026,7 +1047,7 @@ template {
   content: "";
   display: block;
   position: relative;
-  z-index: 20;
+  z-index: 120;
   width: 70px;
   height: 70px;
   top: 50%;
