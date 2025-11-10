@@ -99,8 +99,39 @@ portfolio.addEventListener('click', (e) => {
 	const descrBtn = target.classList.contains('descr');//true
 
 	if(descrBtn) {
-		const item = target.closest('.container');
-		const used = item.querySelector('.portfolio__item-text');
+		const item = target.closest('.container'),
+			  used = item.querySelector('.portfolio__item-text'),
+			  diagram = item.querySelector('.diagram'),
+			  close = used.querySelector('.close');
+
+		//Значення HTML, CSS, JS, PHP для діаграми. Якщо відсутні, то повертаємо 0
+		const valueHTML = parseFloat(item.querySelector('.html')?.textContent || 0),
+			  valueCSS = parseFloat(item.querySelector('.css')?.textContent || 0),
+			  valueJS = parseFloat(item.querySelector('.js')?.textContent || 0),
+			  valuePHP = parseFloat(item.querySelector('.php')?.textContent || 0);
+
+		//встановлюю межі
+		const htmlEnd = valueHTML,
+			  cssEnd = htmlEnd + valueCSS,
+			  jsEnd = cssEnd + valueJS,
+			  phpEnd = jsEnd + valuePHP;
+
+		//задаю значення діаграми для окремих проектів
+		let gradient = `
+		conic-gradient(
+			red 0% ${htmlEnd}%,
+			blue ${htmlEnd}% ${cssEnd}%,
+			yellow ${cssEnd}% ${jsEnd}%
+		`;
+
+		//перевірка на наявність в проекті PHP
+		if(valuePHP > 0) {
+			gradient += `, green ${jsEnd}% ${phpEnd}%`
+		};
+
+		gradient += ')';
+
+		diagram.style.background = gradient;
 
 		used.style.visibility = "visible";
 		used.style.opacity = '1';
@@ -110,7 +141,6 @@ portfolio.addEventListener('click', (e) => {
 
 		portfolioOverlay.style.zIndex = '90';
 
-		const close = used.querySelector('.close');
 		close.addEventListener('click', () => {
 			used.style.visibility = "hidden";
 			used.style.opacity = '0';
