@@ -116,6 +116,36 @@
 			gap: 15px;
 			transition: visibility 0.3s ease, opacity 0.3s ease;
 
+			&#uber {
+				left: 77%;
+				top: -58%;
+			}
+
+			&#quiz {
+				left: -24%;
+				top: -58%;
+			}
+
+			&#pulse {
+				left: -126%;
+				top: -58%;
+			}
+
+			&#mntn {
+				left: -228%;
+				top: -80%;
+			}
+
+			&#food {
+				left: 77%;
+				top: -175%;
+			}
+
+			&#discover {
+				left: -24%;
+				top: -175%;
+			}
+
 			.stack {
 				grid-column: 1/2;
 
