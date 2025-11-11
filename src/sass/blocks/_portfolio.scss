@@ -209,6 +209,14 @@
 									background-color: yellow;
 								}
 							}
+
+							&.php {
+								margin-left: 75px;
+
+								&::before {
+									background-color: green;
+								}
+							}
 						}
 					}
 

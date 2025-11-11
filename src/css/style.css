@@ -1056,6 +1056,12 @@ template {
 .portfolio__item-text .stack .items .item span.js::before {
   background-color: yellow;
 }
+.portfolio__item-text .stack .items .item span.php {
+  margin-left: 75px;
+}
+.portfolio__item-text .stack .items .item span.php::before {
+  background-color: green;
+}
 .portfolio__item-text .diagram {
   grid-column: 2/3;
   width: 110px;
