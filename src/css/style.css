@@ -1447,7 +1447,48 @@ p {
   .portfolio__wrapper {
     grid-template: repeat(2, 225px)/repeat(4, 225px);
     grid-auto-rows: 225px;
-    gap: 9px;
+    -moz-column-gap: 9px;
+         column-gap: 9px;
+    row-gap: 50px;
+  }
+  .portfolio__wrapper .container {
+    width: 225px;
+    height: 225px;
+  }
+  .portfolio__wrapper .container.vertical {
+    height: 500px;
+  }
+  .portfolio__item-btns {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  .portfolio__item-btns .code, .portfolio__item-btns .descr {
+    height: 40px;
+  }
+  .portfolio__item-text {
+    width: 580px;
+    height: 260px;
+    padding: 30px 15px 20px 15px;
+    grid-template: 110px 40px/185px 150px 185px;
+    gap: 10px;
+  }
+  .portfolio__item-text .stack span, .portfolio__item-text .libraries span {
+    font-size: 15px;
+  }
+  .portfolio__item-text .stack .items .item, .portfolio__item-text .libraries .items .item {
+    font-size: 14px;
+  }
+  .portfolio__item-text .stack .items .item span.css, .portfolio__item-text .libraries .items .item span.css {
+    margin-left: 18px;
+  }
+  .portfolio__item-text .stack .items .item span.js, .portfolio__item-text .libraries .items .item span.js {
+    margin-left: 40px;
+  }
+  .portfolio__item-text .stack .items .item span.php, .portfolio__item-text .libraries .items .item span.php {
+    margin-left: 72px;
+  }
+  .portfolio__item-text .close {
+    bottom: -40px;
   }
   .price {
     padding-top: 100px;
