@@ -1576,11 +1576,81 @@ p {
   .portfolio__wrapper {
     grid-template: repeat(2, 225px)/repeat(auto-fit, 225px);
     justify-content: space-between;
-    gap: 22px;
+    -moz-column-gap: 22px;
+         column-gap: 22px;
+    row-gap: 62px;
   }
-  .portfolio .vertical, .portfolio .horizontal {
+  .portfolio__wrapper .container.vertical, .portfolio__wrapper .container.horizontal {
     grid-row: unset;
     grid-column: unset;
+    width: 225px;
+    height: 225px;
+  }
+  .portfolio__item-btns {
+    margin-top: 0;
+  }
+  .portfolio__item-text {
+    width: 520px;
+    height: 240px;
+    padding: 15px;
+    grid-template: 110px 40px/180px 100px 190px;
+    gap: 5px;
+  }
+  .portfolio__item-text .stack .items, .portfolio__item-text .libraries .items {
+    font-size: 14px;
+  }
+  .portfolio__item-text .stack .items .item, .portfolio__item-text .libraries .items .item {
+    font-size: 12px;
+  }
+  .portfolio__item-text .stack .items .item span.html, .portfolio__item-text .stack .items .item span.css, .portfolio__item-text .stack .items .item span.js, .portfolio__item-text .stack .items .item span.php, .portfolio__item-text .libraries .items .item span.html, .portfolio__item-text .libraries .items .item span.css, .portfolio__item-text .libraries .items .item span.js, .portfolio__item-text .libraries .items .item span.php {
+    font-size: 12px;
+  }
+  .portfolio__item-text .stack .items .item span.html, .portfolio__item-text .libraries .items .item span.html {
+    margin-left: 52px;
+  }
+  .portfolio__item-text .stack .items .item span.css, .portfolio__item-text .libraries .items .item span.css {
+    margin-left: 24px;
+  }
+  .portfolio__item-text .stack .items .item span.js, .portfolio__item-text .libraries .items .item span.js {
+    margin-left: 43px;
+  }
+  .portfolio__item-text .stack .items .item span.php, .portfolio__item-text .libraries .items .item span.php {
+    margin-left: 70px;
+  }
+  .portfolio__item-text .diagram {
+    width: 90px;
+    height: 90px;
+  }
+  .portfolio__item-text .diagram:before {
+    width: 60px;
+    height: 60px;
+  }
+  .portfolio__item-text .close {
+    width: 170px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .portfolio__item-text#uber {
+    left: 46%;
+  }
+  .portfolio__item-text#quiz {
+    left: -66%;
+  }
+  .portfolio__item-text#mntn {
+    left: -174%;
+    top: -58%;
+  }
+  .portfolio__item-text#pulse {
+    left: 46%;
+    top: -186%;
+  }
+  .portfolio__item-text#food {
+    left: -66%;
+    top: -186%;
+  }
+  .portfolio__item-text#discover {
+    left: -174%;
+    top: -186%;
   }
   .price {
     padding-top: 80px;

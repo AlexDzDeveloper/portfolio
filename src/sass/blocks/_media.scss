@@ -209,12 +209,112 @@
     &__wrapper {
       grid-template: repeat(2, 225px) / repeat(auto-fit, 225px);
       justify-content: space-between;
-      gap: 22px;
-    }
-    .vertical, .horizontal {
-      grid-row: unset;
-      grid-column: unset;
-    }
+      column-gap: 22px;
+	  row-gap: 62px;
+
+	  .container {
+		  &.vertical, &.horizontal {
+			  grid-row: unset;
+			  grid-column: unset;
+			  width: 225px;
+			  height: 225px;
+			}
+		}
+	}
+
+	&__item {
+		&-btns {
+			margin-top: 0;
+		}
+
+		&-text {
+			width: 520px;
+			height: 240px;
+			padding: 15px;
+			grid-template: 110px 40px / 180px 100px 190px;
+			gap: 5px;
+
+			.stack, .libraries {
+				span {
+
+				}
+
+				.items {
+					font-size: 14px;
+
+					.item {
+						font-size: 12px;
+
+						span {
+							&.html, &.css, &.js, &.php {
+								font-size: 12px;
+							}
+
+							&.html {
+								margin-left: 52px;
+							}
+
+							&.css {
+								margin-left: 24px;
+							}
+
+							&.js {
+								margin-left: 43px;
+							}
+
+							&.php {
+								margin-left: 70px;
+							}
+						}
+					}
+				}
+			}
+
+			.diagram {
+				width: 90px;
+				height: 90px;
+
+				&:before {
+					width: 60px;
+					height: 60px;
+				}
+			}
+
+			.close {
+				width: 170px;
+				height: 38px;
+				font-size: 16px;
+			}
+
+			&#uber {
+				left: 46%;
+			}
+
+			&#quiz {
+				left: -66%;
+			}
+
+			&#mntn {
+				left: -174%;
+				top: -58%;
+			}
+
+			&#pulse {
+				left: 46%;
+				top: -186%;
+			}
+
+			&#food {
+				left: -66%;
+				top: -186%;
+			}
+
+			&#discover {
+				left: -174%;
+				top: -186%;
+			}
+		}
+	}
   }
   .price {
     padding-top: 80px;
