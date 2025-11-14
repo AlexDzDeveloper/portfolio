@@ -28,7 +28,7 @@
       row-gap: 30px;
     }
     &__skills {
-      grid-template: repeat(2, minmax(115px, auto)) /repeat(2, 225px);
+      grid-template: repeat(2, minmax(115px, auto)) / repeat(2, 225px);
       column-gap: 40px;
       &-item {
         grid-template-columns: 40px 170px;
@@ -100,9 +100,6 @@
 						font-size: 14px;
 
 						span {
-							&.html {
-
-							}
 							&.css {
 								margin-left: 18px;
 							}
@@ -135,7 +132,7 @@
       grid-template-columns: 400px 500px;
     }
     &__form {
-      grid-template: 45px 240px 45px/repeat(2,240px);;
+      grid-template: 45px 240px 45px / repeat(2,240px);;
     }
   }
 }
@@ -235,9 +232,6 @@
 			gap: 5px;
 
 			.stack, .libraries {
-				span {
-
-				}
 
 				.items {
 					font-size: 14px;
@@ -420,8 +414,79 @@
       grid-template: repeat(2, 240px) / repeat(auto-fit, 240px);
       justify-content: space-evenly;
       grid-auto-rows: 240px;
-      gap: 45px;
+      column-gap: 35px;
+      row-gap: 60px;
+
+	  .container {
+		width: 240px;
+		height: 240px;
+
+		&.vertical {
+			width: 240px;
+			height: 240px;
+		}
+	  }
     }
+
+	&__item {
+		&-text {
+			width: 430px;
+			height: 300px;
+			grid-template: 130px 110px / 180px 180px;
+			column-gap: 40px;
+			row-gap: 20px;
+
+			.libraries {
+				grid-column: 2 / 3;
+			}
+
+			.diagram {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+				align-self: center;
+			}
+
+			.close {
+				grid-column: 2 / 3;
+				grid-row: 2 / 3;
+				width: 140px;
+				height: 30px;
+				font-size: 14px;
+				bottom: -65px;
+				left: 46%;
+			}
+
+			&#uber {
+				left: 21%;
+				top: -17%;
+			}
+
+			&#quiz {
+				left: -100%;
+				top: -17%;
+			}
+
+			&#mntn {
+				left: 21%;
+				top: -142%;
+			}
+
+			&#pulse {
+				left: -100%;
+				top: -142%;
+			}
+
+			&#food {
+				left: 21%;
+				top: -255%;
+			}
+
+			&#discover {
+				left: -100%;
+				top: -255%;
+			}
+		}
+	}
   }
   .price {
     padding-top: 60px;
@@ -547,8 +612,114 @@
     &__wrapper {
       grid-template: repeat(2, 270px) / repeat(auto-fit, 270px);
       grid-auto-rows: 270px;
-      gap: 25px;
+      gap: 45px;
+
+	  .container {
+		padding: 0;
+		width: 270px;
+		height: 270px;
+
+		&.vertical {
+			width: 270px;
+			height: 270px;
+		}
+	  }
     }
+
+	&__item {
+		&-text {
+			width: 270px;
+			height: 320px;
+			grid-template: 120px 160px / 150px 80px;
+			gap: 10px;
+			padding: 10px;
+
+			&#uber, &#quiz, &#mntn, &#pulse, &#food, &#discover {
+				left: 0;
+				top: -121%;
+			}
+
+			.stack, .libraries {
+				span {
+					font-size: 13px;
+				}
+
+				.items {
+					.item {
+						font-size: 11px;
+						margin-left: 20px;
+						list-style-type: disc;
+
+						&:before {
+							font-size: 14px;
+						}
+
+						span {
+							&.html {
+								margin-left: 44px;
+							}
+
+							&.css {
+								margin-left: 18px;
+							}
+
+							&.js {
+								margin-left: 36px;
+							}
+
+							&.php {
+								margin-left: 62px;
+							}
+						}
+					}
+				}
+			}
+
+			.stack {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+
+				.items {
+					.item {
+						margin-left: 13px;
+					}
+				}
+			}
+
+			.diagram {
+				grid-column: 2 / 3;
+				grid-row: 1 / 2;
+				width: 80px;
+				height: 80px;
+				align-self: flex-end;
+				justify-self: flex-start;
+
+				&:before {
+					width: 45px;
+					height: 45px;
+				}
+			}
+
+			.libraries {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+
+				.items {
+					.item {
+						line-height: 19px;
+						margin-left: 20px;
+					}
+				}
+			}
+
+			.close {
+				width: 105px;
+				font-size: 13px;
+				bottom: -125px;
+				left: 35%;
+			}
+		}
+	}
   }
   .price {
     padding-top: 40px;
