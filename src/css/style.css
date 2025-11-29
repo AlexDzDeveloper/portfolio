@@ -1000,6 +1000,10 @@ template {
   left: -24%;
   top: -175%;
 }
+.portfolio__item-text#childhood {
+  left: -126%;
+  top: -175%;
+}
 .portfolio__item-text .stack {
   grid-column: 1/2;
 }
@@ -1653,6 +1657,10 @@ p {
     left: -174%;
     top: -186%;
   }
+  .portfolio__item-text#childhood {
+    left: 46%;
+    top: -175%;
+  }
   .price {
     padding-top: 80px;
   }
@@ -1812,11 +1820,15 @@ p {
   }
   .portfolio__item-text#food {
     left: 21%;
-    top: -255%;
+    top: -142%;
   }
   .portfolio__item-text#discover {
     left: -100%;
-    top: -255%;
+    top: -142%;
+  }
+  .portfolio__item-text#childhood {
+    left: 21%;
+    top: -142%;
   }
   .price {
     padding-top: 60px;
@@ -1947,7 +1959,7 @@ p {
     gap: 10px;
     padding: 10px;
   }
-  .portfolio__item-text#uber, .portfolio__item-text#quiz, .portfolio__item-text#mntn, .portfolio__item-text#pulse, .portfolio__item-text#food, .portfolio__item-text#discover {
+  .portfolio__item-text#uber, .portfolio__item-text#quiz, .portfolio__item-text#mntn, .portfolio__item-text#pulse, .portfolio__item-text#food, .portfolio__item-text#discover, .portfolio__item-text#childhood {
     left: 0;
     top: -121%;
   }
