@@ -63,6 +63,10 @@ $(document).ready(function(){
 });
 
 const form = document.querySelector('.contacts__form');
+const submitBtn = form.querySelector('.btn');
+const originalBtnText = submitBtn.textContent;
+
+console.log(submitBtn, originalBtnText);
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -81,8 +85,22 @@ form.addEventListener('submit', function(e) {
     .then(data => {
       // Відобразити повідомлення про успішне відправлення або зробити інші дії
       console.log(data);
-      // Очищення полів вводу
-      form.reset();
+
+	  if (data.includes('Message has been sent')) {
+          submitBtn.textContent = 'Надіслано!';
+          submitBtn.style.backgroundColor = '#28a745'; // Зелений колір тексту
+
+		  // Очищення полів вводу
+		  form.reset();
+
+          // Повертаємо текст кнопки назад через 3 секунди
+          setTimeout(() => {
+              submitBtn.textContent = originalBtnText;
+              submitBtn.style.backgroundColor = '';
+          }, 3000);
+      }
+
+
     })
     .catch(error => {
       console.error('Помилка:', error);
