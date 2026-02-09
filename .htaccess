@@ -1,6 +1,7 @@
 # Дозволити серверу обробляти SVG-файли
 AddType image/svg+xml svg svgz
 AddEncoding gzip svgz
+AddType application/json .json
 
 # Увімкнути кешування для зображень (опціонально)
 <FilesMatch "\.(svg|svgz)$">

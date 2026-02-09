@@ -66,8 +66,6 @@ const form = document.querySelector('.contacts__form');
 const submitBtn = form.querySelector('.btn');
 const originalBtnText = submitBtn.textContent;
 
-console.log(submitBtn, originalBtnText);
-
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
